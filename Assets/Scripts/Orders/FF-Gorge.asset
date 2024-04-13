@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ef6051130715944bb2a857b592e89b5, type: 3}
-  m_Name: Commune
+  m_Name: FF-Gorge
   m_EditorClassIdentifier: 
-  name: Commune
-  powerCost: 0
+  name: Gorge
+  powerCost: 1
   wordCount: 2
-  words: 0200000000000000
+  words: 0000000000000000

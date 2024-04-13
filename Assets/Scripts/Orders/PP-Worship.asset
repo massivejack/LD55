@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ef6051130715944bb2a857b592e89b5, type: 3}
-  m_Name: Kill
+  m_Name: PP-Worship
   m_EditorClassIdentifier: 
-  name: Kill
-  powerCost: 0
-  wordCount: 1
-  words: 01000000
+  name: Worship
+  powerCost: 1
+  wordCount: 2
+  words: 0200000002000000

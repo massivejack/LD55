@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 // Enum for the words
 public enum Word
@@ -19,6 +20,10 @@ public class WordSlotManager : MonoBehaviour
     public KeyCode[] keyBindings; // Key bindings for adding words
     public List<Order> allOrders; // List of all Order scriptable objects
     public Order currentInvokedOrder; // Current invoked order
+
+    // Define events
+    public UnityEvent newWordAddedEvent;
+    public UnityEvent orderInvokedEvent;
 
     private void Start()
     {
@@ -63,6 +68,9 @@ public class WordSlotManager : MonoBehaviour
             wordSlots[0] = newWord;
         }
 
+        //invoke event
+        newWordAddedEvent.Invoke();
+
         // Combine debug info into one message
         string debugInfo = "Word Slots: ";
         for (int i = 0; i < maxWordSlots; i++)
@@ -81,6 +89,7 @@ public class WordSlotManager : MonoBehaviour
             if (order.HasAllWords(GetCurrentOrder()))
             {
                 currentInvokedOrder = order;
+                orderInvokedEvent.Invoke();
                 Debug.Log("Invoked order: " + currentInvokedOrder.name); // Debug print the invoked order             
                 break;
             }
@@ -112,7 +121,7 @@ public class WordSlotManager : MonoBehaviour
         {
             wordSlots[i] = Word.Empty;
         }
-        Debug.Log("Words cleared, all set to Empty");
+      //  Debug.Log("Words cleared, all set to Empty");
     }
 
 #if UNITY_EDITOR
